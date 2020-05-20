@@ -4,6 +4,7 @@ const RED = "#FF4136";
 const BLUE = "#0074D9"
 const NAVY = "#001f3f";
 const GRAY = "#AAAAAA";
+const GREEN = "#2ECC40";
 
 // Initialize the canvas
 const canvas = document.getElementById("canvas");
@@ -40,6 +41,13 @@ function createArray(n) {
     return arr;
 }
 
+// stop the animation at this moment
+function stop() {
+    timer.forEach((sto) => {
+        clearTimeout(sto);
+    });
+}
+
 // selection sort animation
 function startSelectionSort() {
 
@@ -53,7 +61,7 @@ function startSelectionSort() {
 
     // run the SelectionSort
     let arr = createArray(length);
-    SelectionSort(arr, states);
+    selectionSort(arr, states);
 
     // show the animation
     for (let i = 0; i < states.length; i++) {
@@ -72,9 +80,9 @@ function startInsertionSort() {
     // clear the states
     states = [];
 
-    // run the SelectionSort
+    // run the InsertionSort
     let arr = createArray(length);
-    InsertionSort(arr, states);
+    insertionSort(arr, states);
 
     // show the animation
     for (let i = 0; i < states.length; i++) {
@@ -82,9 +90,23 @@ function startInsertionSort() {
     }
 }
 
-// stop the animation at this moment
-function stop() {
+// merge sort animation
+function startMergeSort() {
+
+    // clear previous animation
     timer.forEach((sto) => {
         clearTimeout(sto);
     });
+
+    // clear the states
+    states = [];
+
+    // run the MergeSort
+    let arr = createArray(length);
+    mergeSort(arr, states);
+
+    // show the animation
+    for (let i = 0; i < states.length; i++) {
+        timer.push(setTimeout(drawMerge, speed * i, states[i][0], states[i][1], states[i][2], states[i][3]));
+    }
 }

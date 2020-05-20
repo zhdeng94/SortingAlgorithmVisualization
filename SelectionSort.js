@@ -3,7 +3,7 @@
 // orderIndex means that the array is sorted from [0, orderIndex)
 // curCompareIndex is the array index that is current being compared
 // curMinIndex is the index of the minimum among the unsorted portion
-function SelectionSort(arr, states) {
+function selectionSort(arr, states) {
 
     states.push([arr.slice(), 0, -1, -1]);
     for (let i = 0; i < arr.length; i++) {
