@@ -110,3 +110,25 @@ function startMergeSort() {
         timer.push(setTimeout(drawMerge, speed * i, states[i][0], states[i][1], states[i][2], states[i][3]));
     }
 }
+
+// 2-way quick sort animation
+function startQuickSort2Way() {
+
+    // clear previous animation
+    timer.forEach((sto) => {
+        clearTimeout(sto);
+    });
+
+    // clear the states
+    states = [];
+
+    // run the 2-way quick sort
+    let arr = createArray(length);
+    quickSort2Way(arr, states);
+
+    // show the animation
+    for (let i = 0; i < states.length; i++) {
+        timer.push(setTimeout(drawQuick2Way, speed * i, states[i][0], states[i][1], states[i][2],
+            states[i][3], states[i][4], states[i][5], states[i][6]));
+    }
+}
