@@ -132,3 +132,24 @@ function startQuickSort2Way() {
             states[i][3], states[i][4], states[i][5], states[i][6]));
     }
 }
+
+// heap sort animation
+function startHeapSort() {
+
+    // clear previous animation
+    timer.forEach((sto) => {
+        clearTimeout(sto);
+    });
+
+    // clear the states
+    states = [];
+
+    // run heap sort
+    let arr = createArray(length);
+    heapSort(arr, states);
+
+    // show the animation
+    for (let i = 0; i < states.length; i++) {
+        timer.push(setTimeout(drawHeap, speed * i, states[i][0], states[i][1]));
+    }
+}
