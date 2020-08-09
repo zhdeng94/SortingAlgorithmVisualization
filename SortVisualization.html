@@ -4,22 +4,37 @@
         <meta charset="utf-8">
         <title>Sorting Algorithm Visualization</title>
         <link rel="stylesheet" href="SortVisualization.css">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
     </head>
 
     <body>
         <h1>Sorting Algorithm Visualization</h1>
-        <input type="button" id="select" value="Selection Sort" onclick="startSelectionSort()">
-        <input type="button" id="insert" value="Insertion Sort" onclick="startInsertionSort()">
-        <input type="button" id="merge" value="Merge Sort" onclick="startMergeSort()">
-        <input type="button" id="quick" value="Quick Sort" onclick="startQuickSort2Way()">
-        <input type="button" id="heap" value="Heap Sort" onclick="startHeapSort()">
-        <input type="button" id="stop" value="Stop" onclick="stop()">
-        <p></p>
 
+        <div class="sort_algo">
+            <div class="buttons"><input type="button" id="select" value="Selection Sort" onclick="startSelectionSort()"></div>
+            <div class="buttons"><input type="button" id="insert" value="Insertion Sort" onclick="startInsertionSort()"></div>
+            <div class="buttons"><input type="button" id="merge" value="Merge Sort" onclick="startMergeSort()"></div>
+            <div class="buttons"><input type="button" id="quick" value="Quick Sort" onclick="startQuickSort2Way()"></div>
+            <div class="buttons"><input type="button" id="heap" value="Heap Sort" onclick="startHeapSort()"></div>
+        </div>
 
-        <input type="range" min="10" max="100" value="50" id="Length">
-        <input type="range" min="20" max="100" value="60" id="Speed">
-        <canvas id="canvas"></canvas>
+        <div class="container">
+            <div class="range">
+                Array Length<br>
+                Short <input type="range" min="10" max="100" value="50" id="Length"> Long
+            </div>
+            <div class="range">
+                Animation Speed<br>
+                Slow <input type="range" min="20" max="100" value="60" id="Speed"> Fast
+            </div>
+            <div class="buttons"><input type="button" id="stop" value="Stop" onclick="stop()"></div>
+        </div>
+
+        <div class="canvas">
+            <canvas id="canvas"></canvas>
+        </div>
+        
+
         <script type="text/javascript" src="SelectionSort.js"></script>
         <script type="text/javascript" src="InsertionSort.js"></script>
         <script type="text/javascript" src="MergeSort.js"></script>
