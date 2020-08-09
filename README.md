@@ -8,4 +8,8 @@ The implemented sorting algorithms includes:
 - Quick Sort 
 - Heap Sort
 
-The length of the array and the speed of the animation can be customized.
+The length of the array and the speed of the animation can be customized.  
+
+<img src="https://github.com/zhdeng94/SortingAlgorithmVisualization/blob/master/frontpage.png" width="60%" />
+
+
